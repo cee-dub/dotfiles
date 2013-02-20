@@ -46,4 +46,7 @@ if [[ -s $(which rbenv) ]]; then
 	eval "$(rbenv init -)"
 fi
 
-source "$HOME/.apcera"
+if [[ -s "$HOME/.apcera" ]]; then
+	source "$HOME/.apcera"
+fi
+
