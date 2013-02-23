@@ -25,7 +25,7 @@ alias grc="git rebase --continue"
 alias zshconf="subl $HOME/.zshrc"
 alias ohmy="subl $HOME/.oh-my-zsh"
 
-if [[ -s $(which rbenv) ]]; then
+if command -v rbenv >/dev/null 2>&1; then
 	eval "$(rbenv init -)"
 fi
 
