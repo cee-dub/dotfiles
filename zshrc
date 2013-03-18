@@ -24,6 +24,9 @@ alias gs="git status -s"
 alias grc="git rebase --continue"
 alias zshconf="subl $HOME/.zshrc"
 alias ohmy="subl $HOME/.oh-my-zsh"
+alias sshfs="nocorrect sshfs"
+alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 if command -v rbenv >/dev/null 2>&1; then
 	eval "$(rbenv init -)"
