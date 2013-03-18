@@ -28,13 +28,12 @@ alias sshfs="nocorrect sshfs"
 alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
-if command -v rbenv >/dev/null 2>&1; then
-	eval "$(rbenv init -)"
-fi
-
-if [[ -s "$HOME/.apcera" ]]; then
-	source "$HOME/.apcera"
-fi
+if [[ -s "$HOME/.apcera" ]]; then source "$HOME/.apcera"; fi
 
 export GOBIN=$GOPATH/bin
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GOBIN
+export PATH=$GOBIN:/usr/local/bin:/usr/local/sbin:${PATH}
+
+# rbenv setup
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+alias bundle="nocorrect bundle"
