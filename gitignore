@@ -1,4 +1,4 @@
-# OS 
+# OS
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -13,4 +13,8 @@ Icon
 .Trashes
 
 # SublimeText project files
-*.sublime-workspace
+*.sublime-*
+
+# Bundler installations
+.bundle
+.git/../bin
