@@ -17,23 +17,30 @@ plugins=(autojump battery brew git github history history-substring-search osx r
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# Less annoying corrections
+alias bundle="nocorrect bundle"
 alias go="nocorrect go"
-alias gtv="go test -v"
-alias gs="git status -s"
-alias grc="git rebase --continue"
-alias zshconf="subl $HOME/.zshrc"
-alias ohmy="subl $HOME/.oh-my-zsh"
 alias sshfs="nocorrect sshfs"
+
+# Handy things
+alias grc="git rebase --continue"
+alias gs="git status -s"
+alias gtv="go test -v"
+alias ohmy="subl $HOME/.oh-my-zsh"
 alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias zshconf="subl $HOME/.zshrc"
 
+# Optional Apcera config
 if [[ -s "$HOME/.apcera" ]]; then source "$HOME/.apcera"; fi
 
+# Go & Homebrew paths
 export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:/usr/local/bin:/usr/local/sbin:${PATH}
 
-# rbenv setup
+# rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-alias bundle="nocorrect bundle"
+
+# Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
