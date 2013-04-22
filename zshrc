@@ -13,14 +13,18 @@ ZSH_THEME="muse"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(autojump battery brew git github history history-substring-search osx redis-cli themes)
+plugins=(brew git github heroku history history-substring-search osx themes vagrant)
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
+
+# We already have inc_append_history, so share_history is overkill
+unsetopt share_history
 
 # Less annoying corrections
 alias bundle="nocorrect bundle"
 alias go="nocorrect go"
 alias sshfs="nocorrect sshfs"
+alias vagrant="nocorrect vagrant"
 
 # Handy things
 alias grc="git rebase --continue"
